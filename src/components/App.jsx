@@ -11,6 +11,19 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    if (contacts) {
+      this.setState({ contacts: contacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   deleteContact = params => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.idKey !== params),
@@ -24,7 +37,7 @@ class App extends Component {
   addContact = params => {
     const { name, number } = params;
 
-    console.log(name, number);
+    // console.log(name, number);
     const newContact = {};
     newContact.name = name;
     newContact.idKey = nanoid();
