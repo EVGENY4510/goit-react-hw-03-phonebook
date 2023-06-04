@@ -1,0 +1,32 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 300px;
+
+  border: 1px solid black;
+  box-shadow: 4px 3px 9px 0px rgba(168, 166, 168, 1);
+}
+.input {
+  margin-top: 10px;
+  width: 200px;
+  height: 20px;
+}
+.formButton {
+  width: 100px;
+  height: 30px;
+}
+.formButton:hover {
+  box-shadow: 4px 3px 9px 0px rgba(168, 166, 168, 1);
+}
+.formButton:focus {
+  background-color: aqua;
+  border: none;
+}

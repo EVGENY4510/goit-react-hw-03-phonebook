@@ -1,0 +1,19 @@
+.deleteButton {
+  width: 60px;
+  height: 25px;
+  margin-left: 30px;
+}
+.deleteButton:hover {
+  box-shadow: 4px 3px 9px 0px rgba(168, 166, 168, 1);
+}
+.deleteButton:focus {
+  background-color: red;
+  border: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.span {
+  margin-left: 10px;
+}
