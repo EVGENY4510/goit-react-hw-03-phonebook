@@ -5,6 +5,8 @@ import ContactList from './ContactList/ContactList';
 import css from './app.module.css';
 import { nanoid } from 'nanoid';
 
+const KEY = 'contacts';
+
 class App extends Component {
   state = {
     contacts: [],
@@ -12,7 +14,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const contactsPars = JSON.parse(localStorage.getItem('contacts'));
+    const contactsPars = JSON.parse(localStorage.getItem(KEY));
     if (contactsPars) {
       this.setState({ contacts: contactsPars });
     }
@@ -20,7 +22,7 @@ class App extends Component {
 
   componentDidUpdate(prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+      localStorage.setItem(KEY, JSON.stringify(this.state.contacts));
     }
   }
 
